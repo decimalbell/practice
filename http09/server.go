@@ -33,6 +33,7 @@ func (s *Server) Run() error {
 	if err != nil {
 		return err
 	}
+	defer ln.Close()
 
 	for {
 		conn, err := ln.Accept()
